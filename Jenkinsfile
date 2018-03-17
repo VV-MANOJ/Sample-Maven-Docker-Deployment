@@ -13,7 +13,10 @@ node('build-slave') {
 
        stage('Pre-Build'){
        sh('mvn clean install -DskipTests')
-       sh('docker build -t testimage .')
+       sh('docker build -t sunbird/testimage .')
+       sh('docker login -u purplesunbird -p engg-access  )
+       sh('docker push sunbird/testimage')
+ 
        }
 
     }
