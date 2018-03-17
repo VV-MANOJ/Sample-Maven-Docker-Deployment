@@ -13,6 +13,7 @@ node('build-slave') {
 
        stage('Pre-Build'){
        sh('mvn clean install -DskipTests')
+       sh('docker build -t testimage .')
        }
 
     }
