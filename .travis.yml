@@ -3,8 +3,8 @@ sudo: false
 services:
   - docker
 before_install:
-- docker build -t manojrpms/check:1.5.${TRAVIS_BUILD_NUMBER}.${TRAVIS_JOB_NUMBER}-bronze .
+- docker build -t manojrpms/check:1.5.0-bronze .
 - docker login --username manojrpms  --password manoj@ilimi1
-- docker push manojrpms/check:1.5.${TRAVIS_BUILD_NUMBER}.${TRAVIS_JOB_NUMBER}-bronze
+- docker push manojrpms/check:1.5.0-bronze
 
 
