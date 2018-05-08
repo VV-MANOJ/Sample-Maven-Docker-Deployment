@@ -4,7 +4,7 @@ services:
   - docker
 before_install:
 - docker build -t manojrpms/check .
-- docker login --username manojrpms 
+- docker login --username manojrpms  --password manoj@ilimi1
 - docker push
 script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
