@@ -1,3 +1,10 @@
 language: java
 sudo: false
+services:
+  - docker
+before_install:
+- docker build -f manojrpms/check
+- docker login --username manojrpms 
+- docker push
 script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
