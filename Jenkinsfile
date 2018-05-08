@@ -1,6 +1,6 @@
 #!groovy
 
-node('build-slave') {
+node('master') {
 
     currentBuild.result = "SUCCESS"
 
@@ -13,10 +13,9 @@ node('build-slave') {
 
        stage('Pre-Build'){
        sh('mvn clean install -DskipTests')
-       sh('docker build -t sunbird/testimage .')
-       sh('docker login -u purplesunbird -p engg-access')
-       sh('docker push sunbird/testimage')
- 
+       sh('docker build -t manojrpms/testimage .')
+       sh('docker login -u manojrpms -p manoj@ilimi1')
+       sh('docker push manojrpms/testimage')
        }
 
     }
