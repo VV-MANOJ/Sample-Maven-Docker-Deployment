@@ -5,8 +5,8 @@ services:
 script:
 - docker login --username manojrpms  --password $hubpass
 before_install:
-- docker build -t manojrpms/check:1.5.0-bronze .
-- docker push manojrpms/check:1.5.0-bronze
+- docker build -t manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze .
+- docker push manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze
 
 env:
    global:  
