@@ -2,10 +2,12 @@ language: java
 sudo: false
 services:
 - docker
+script:
+- docker login --username manojrpms  --password $hubpass
 before_install:
 - docker build -t manojrpms/check:1.5.0-bronze .
-- docker login --username manojrpms  --password manoj@ilimi1
 - docker push manojrpms/check:1.5.0-bronze
+
 env:
    global:  
     -  secure: GEyJ9YHUExrYtLm1ici4gNMT8bWDbex84L3A879aM2H00xFwWAfIVo3xaS34S811zG0cCoRX/F1j6TQqmGsGBPgTSircRLa9uPIrYoLbtod384em7WSonXJ1GV6t95DaUkks2yCAhHzuEE1WrBWkZIpZaio+7y4yedW2lbaizEwuw2g+hQothX7ey05eGWF1THPt+UegrsRJSXM5vPKbvB/DT6Drg6bC4afw3VyNUMPMrjmqVdXV185TI3Zmk+HlUM0nCCN924r0w8HFulV3hBJNaj0dd1qKTVY38ImmwKI3PPsGJTdETFa+Rj0SvE7rKi9LgkrwKcSqAyBGpDHYrAkFvltPILgPQL5kv+jXCYlvWa7+8knVY8QkWLlJi12BJ1pZKNNtLySqw/6F+LCD+W+UjISzgkMH4OJKr4dzy8Psh1weYD8Lgwu+sLTskWg7j1LTTlLoTbKnT3gCwTP3uThp6yEUIINsgrlwN4nKGxrSIoM0niEPUrjHnS3JMOgJ1i/ntfRa2YffdU5XjG0EHLpG4bVuINo3SazGc+vQFmerqCM5t8pn2XPs6YWOaJUIjB1Jp7b1qGtAp6S0tzqiBJtiBVvJM0fm/F+f3QqmlYu3ug04IijzockrFaipAkkMwkWrq635EhzkYvvO2ccAzKpxyElMQ487BF4d+XQhKmc=
