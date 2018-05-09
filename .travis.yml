@@ -2,11 +2,22 @@ language: java
 sudo: false
 services:
  - docker
+<<<<<<< HEAD
 before_script:
  - docker login --username manojrpms  --password $hub_pass
 before_install:
+=======
+install:
+>>>>>>> f2b115a2bdb7f224196e831901f4f282b4085329
  - docker build -t manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze .
+script:
+ - docker login --username manojrpms  --password manoj@ilimi1
  - docker push manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze
 env:
+<<<<<<< HEAD
   global:
      - secure: "GESug2CeYXPUCKjADayDJeIlxIl9Qr+S6oVDWKuvqOvgwBqv5j2jL6BBpFW+jLRlI6gr3XXCK/c9q9sXnjgcRkK0AJ2wDp3tpv/4b/lglD6LD425Ui5dSav+qoHxOagrxRcjQM075OZLlWNCDXI0ST6ggBLabnbEYWq7bNl7O7sW4oLT3PA6DHGuhURs7A6Cbp0lNQFQ45vBy9BeOOSGorU6ZB9T5TPthjeUfE0DRL+tvd0RsUxKJwugVk+JTIq6WZvco6FHNqoKXekTKGVqNnb+/vcai6BdnyTx+se44oxCaEzKiRGjvPUXSBkliAbX8tMrW8S5fS1u7Ia/NsVy5qo4UfQHEgJa9tHJ5PhT1CXhkqiWpObw71NHl7fW7IdxuLWzZ31HHwofBsurRiRDCB0XkwdKi6Px7GuzbrGRqFQN8NVHc3jSiXA4GZH3z7GCZycwFWod+PFm06VedooeX5usXQsGhuhMytu66Q2lNrf8kglr4xMN8QT0AV80qimLekN53o+BIZLSxNgafBwChtQcSZPrms/tnmnMweXEvHpo9Z+MszIYDoDvw7uIWoPw/LpuLxxGJsfyHZVGCMEzqEKCgp6ld8Bzoodfktyzct3wdVNy/JbfUx91b94QP0Nm4NfJbLNm27xs+XImJg96gy2Tz+LVLB9ddqLZqPAREs4="  
+=======
+ global:
+  secure: bTcVcEEXUbga0Hy7nt3ERyTKzkhpBqoMyvsTxkeTYdY4rqJyQ0CiO+C/qgvbTmy0qEZmY+nnPgsBdVsfVuh1QCGeEfUxcOLcAZUM6JMMqXtYJK22Sm5dxrNeZfK9q7ycE754wIsLdxf9bR++edt1m2Y+l4xlQ0mAhLSzoayeBuu0Dosb9nfCcU7vls8ixpChL1kyzz8yxdhKx2rOM2v6RnIFI08BJEXm2ZSKqh5SJsDg3O0wJLrzkT5eLVtA4cGLnO2b90sdRjMG15BWKI67rFvVu83dU2Jd7Qdc1vIHNZ0tapGWnBcmFicda4lbsuKBdsthv8hRe7onIAeVZWeFn3uumhZypU8bqI5nK7Q2/qjeSHrdyiH8Y2JUmS/RPa0fm7VPqX6SshUSaoRcYhXObGO77gRF/RWACRqCq7xUsuT9/wpRvTBgSHDlLI2lyilzGupxir3POG94LyD+SB7js8i88AKGGaS5or7lAQHOt8SF0ajMLAwbsA+WgnPj2Rmup0xLXR0ShyjMigFSJkgTYWkstbKuEIQOkaqyDFx3rxOkuz545Rt2ULo+MblsMDK4sM9M6eBR+0cPr2rsGSISuMMZz2xR/hiGbVRhK4TUx4WftGjs0/nclPGXz6k35Rmx1is0MQP1qzomupG48ofEQz335CIrLRZ5Uu5Nqj2kMX4=
+>>>>>>> f2b115a2bdb7f224196e831901f4f282b4085329
