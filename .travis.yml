@@ -2,12 +2,12 @@ language: java
 sudo: false
 services:
  - docker
-before_script:
- - docker login --username manojrpms  --password $hubpass
-before_install:
+install:
  - docker build -t manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze .
+script:
+ - docker login --username manojrpms  --password manoj@ilimi1
  - docker push manojrpms/check:1.5.0-$TRAVIS_BUILD_NUMBER-bronze
 
 env:
- dd:
+ global:
   secure: bTcVcEEXUbga0Hy7nt3ERyTKzkhpBqoMyvsTxkeTYdY4rqJyQ0CiO+C/qgvbTmy0qEZmY+nnPgsBdVsfVuh1QCGeEfUxcOLcAZUM6JMMqXtYJK22Sm5dxrNeZfK9q7ycE754wIsLdxf9bR++edt1m2Y+l4xlQ0mAhLSzoayeBuu0Dosb9nfCcU7vls8ixpChL1kyzz8yxdhKx2rOM2v6RnIFI08BJEXm2ZSKqh5SJsDg3O0wJLrzkT5eLVtA4cGLnO2b90sdRjMG15BWKI67rFvVu83dU2Jd7Qdc1vIHNZ0tapGWnBcmFicda4lbsuKBdsthv8hRe7onIAeVZWeFn3uumhZypU8bqI5nK7Q2/qjeSHrdyiH8Y2JUmS/RPa0fm7VPqX6SshUSaoRcYhXObGO77gRF/RWACRqCq7xUsuT9/wpRvTBgSHDlLI2lyilzGupxir3POG94LyD+SB7js8i88AKGGaS5or7lAQHOt8SF0ajMLAwbsA+WgnPj2Rmup0xLXR0ShyjMigFSJkgTYWkstbKuEIQOkaqyDFx3rxOkuz545Rt2ULo+MblsMDK4sM9M6eBR+0cPr2rsGSISuMMZz2xR/hiGbVRhK4TUx4WftGjs0/nclPGXz6k35Rmx1is0MQP1qzomupG48ofEQz335CIrLRZ5Uu5Nqj2kMX4=
